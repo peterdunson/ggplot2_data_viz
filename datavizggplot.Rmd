@@ -1,0 +1,162 @@
+---
+title: "intro to data vis"
+author: "Peter"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r}
+diamonds <- load("/Users/peterdunson/Downloads/diamonds.RData")
+```
+
+
+
+```{r}
+ggplot(mammals, aes(x = body, y = brain)) +
+  geom_point(alpha = .6) +
+  coord_fixed() +
+  scale_x_log10() + #creates log without annoying steps
+  scale_y_log10() +
+  stat_smooth(method = "lm", se = FALSE, size = 1)
+```
+
+```{r}
+str(mtcars)
+```
+
+```{r}
+ggplot(mtcars, aes(cyl, mpg)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+```{r}
+#changing above, telling ggplot that cyl is categorical
+ggplot(mtcars, aes(factor(cyl), mpg)) +
+  geom_point()
+```
+
+```{r}
+ggplot(mtcars, aes(wt, mpg, color = disp)) +
+  geom_point()
+```
+
+```{r}
+ggplot(mtcars, aes(wt, mpg, size = disp)) +
+  geom_point()
+```
+
+```{r}
+iris
+```
+
+```{r}
+g <- ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width)) +
+  geom_jitter()
+g
+```
+
+```{r}
+g <- g +
+  labs(x = "Sepal Length (cm)", y = "Sepal Width (cm)") +
+  theme_classic()
+g
+```
+
+```{r}
+str(diamonds)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
